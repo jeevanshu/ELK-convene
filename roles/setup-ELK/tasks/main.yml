@@ -1,0 +1,16 @@
+---
+# tasks file for setup-ELK
+- include: es.yml
+  tags:
+    - setup_elk
+    - setup_es
+
+- include: kibana.yml
+  tags:
+    - setup_elk
+- include: logstash.yml
+  tags:
+    - setup_elk
+- include: filebeat.yml
+  tags:
+    - setup_elk

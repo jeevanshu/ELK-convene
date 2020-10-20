@@ -1,0 +1,6 @@
+---
+- name: Setup ELK installation on nodes
+  hosts: all
+  become: true
+  roles:
+    - setup-ELK

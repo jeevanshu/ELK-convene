@@ -1,0 +1,12 @@
+---
+
+- name: Install filebeat
+  apt:
+    name: filebeat
+    update_cache: yes
+
+- name: Start filebeat
+  systemd:
+    name: filebeat
+    state: started
+    enabled: yes

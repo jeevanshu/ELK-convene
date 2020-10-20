@@ -1,0 +1,12 @@
+---
+
+- name: Install logstash
+  apt:
+    name: logstash
+    update_cache: yes
+
+- name: Start logstash
+  systemd:
+    name: logstash
+    state: started
+    enabled: yes

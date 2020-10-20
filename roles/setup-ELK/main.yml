@@ -1,0 +1,9 @@
+---
+- name: Install ELK
+  hosts: all
+  become: true
+  vars_file:
+  	- defaults/main.yml
+  	- vars/all
+  tasks:
+    - include: tasks/main.yml
