@@ -1,0 +1,9 @@
+---
+# tasks file for config-ELK
+- include: es.yml
+  tags:
+    - config_elk
+
+- include: kibana.yml
+  tags:
+    - config_elk

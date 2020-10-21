@@ -14,27 +14,13 @@
     repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
     state: present
 
-
 - name: Install Elasticsearch
   apt:
     name: elasticsearch
     update_cache: yes
-
-- name: Update elasticsearch to allow localhost access
-  lineinfile:
-    path: /etc/elasticsearch/elasticsearch.yml
-    regexp: 'networks.host:'
-    line: 'networks.host: 0.0.0.0'
-
-- name: Setup elasticsearch port
-  lineinfile:
-    path: /etc/elasticsearch/elasticsearch.yml
-    regexp: 'http.host:'
-    line: 'http.host: 9200'
 
 - name: Start elasticsearch
   systemd:
     name: elasticsearch
     state: started
     enabled: yes
-  become: yes

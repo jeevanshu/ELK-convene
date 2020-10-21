@@ -1,0 +1,19 @@
+---
+
+- name: Update elasticsearch to allow localhost access
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    regexp: 'networks.host:'
+    line: 'networks.host: 0.0.0.0'
+
+- name: Setup elasticsearch port
+  lineinfile:
+    path: /etc/elasticsearch/elasticsearch.yml
+    regexp: 'http.host:'
+    line: 'http.host: 9200'
+
+- name: Start elasticsearch
+  systemd:
+    name: elasticsearch
+    state: restarted
+    enabled: yes

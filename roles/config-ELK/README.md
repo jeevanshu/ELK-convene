@@ -1,7 +1,7 @@
-setup-ELK
+config-ELK
 =========
 
-Role to install ELK packages
+Role to configure ELK
 
 Requirements
 ------------

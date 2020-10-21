@@ -1,0 +1,15 @@
+---
+
+- name: Copy logstash config
+  template:
+    src: logstash.conf.j2
+    dest: /etc/logstash/main.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Restart logstash
+  systemd:
+    name: logstash
+    state: restarted
+    enabled: yes
