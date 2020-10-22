@@ -1,2 +1,7 @@
 ---
 # vars file for config-ELK
+es_host: 0.0.0.0
+es_port: 9200
+
+kibana_host: 127.0.0.1
+kibana_port: 5601

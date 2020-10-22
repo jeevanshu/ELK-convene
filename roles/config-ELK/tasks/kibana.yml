@@ -4,19 +4,19 @@
   lineinfile:
     path: /etc/kibana/kibana.yml
     regexp: 'server.host:'
-    line: 'server.host: 127.0.0.1'
+    line: 'server.host: {{ kibana_host }}'
 
 - name: Set port for kibana
   lineinfile:
     path: /etc/kibana/kibana.yml
     regexp: 'server.port:'
-    line: 'server.port: 5601'
+    line: 'server.port: {{ kibana_port }}'
 
 - name: Set elasticsearch url in kibana config
   lineinfile:
     path: /etc/kibana/kibana.yml
     regexp: 'elasticsearch.url:'
-    line: 'elasticsearch.url: "http://0.0.0.0:9200"'
+    line: 'elasticsearch.url: "http://{{ es_host }}:{{ es_port }}"'
 
 - name: Restart kibana
   systemd:

@@ -7,3 +7,7 @@
 - include: kibana.yml
   tags:
     - config_elk
+
+- include: logstash.yml
+  tags:
+    - config_elk
